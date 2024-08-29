@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра</title>
+    <style>
+        body {
+            background-color: #b0c4de; /* Серо-голубой фон */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .play-button {
+            position: relative;
+            background-color: transparent;
+            color: #000;
+            border: 2px solid #00f;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .play-button::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, #ff0066, #ffcc00, #00ff99, #00ccff);
+            transition: transform 0.6s, opacity 0.6s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity: 0.6; /* Полупрозрачность фона */
+            z-index: 0;
+        }
+
+        .play-button:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .play-button:hover::before {
+            transform: translate(-50%, -50%) scale(7);
+        }
+
+        .play-button span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button"><span>Играть</span></button>
+</body>
+</html>
